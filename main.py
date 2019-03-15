@@ -1,8 +1,6 @@
 #
 # https://arxiv.org/pdf/1710.09829.pdf
 # 
-
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
