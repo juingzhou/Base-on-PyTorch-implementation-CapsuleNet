@@ -79,7 +79,8 @@ class CapsuleLayer(nn.Module):
         # (batch, features, in_units) -> (batch, features, num_units, in_units, 1)
         x = torch.stack([x] * self.num_units, dim=2).unsqueeze(4)
 
-        # (batch, features, in_units, unit_size, num_units)
+        # (batch, features, num_units, unit_size, in_units)
+        # 1, in_channels, num_units, unit_size, in_units
         W = torch.cat([self.W] * batch_size, dim=0)
 
         # Transform inputs by weight matrix.
